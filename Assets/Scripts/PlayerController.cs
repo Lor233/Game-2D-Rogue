@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Vector2 movement;
 
-    float attackCdCurrent;
-
     public float speed;
+    
     public float attackCd;
+    public float attackCdCurrent;
     
 
     // Start is called before the first frame update
