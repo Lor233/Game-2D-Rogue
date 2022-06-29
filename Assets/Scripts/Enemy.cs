@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public Transform playerPos;
+    public bool playerDead;
 
     [Header("Health")]
     public int health;
@@ -31,6 +32,7 @@ public abstract class Enemy : MonoBehaviour
     public void Update()
     {
         playerPos = GameObject.Find("Player").transform;
+        playerDead = GameObject.Find("Player").GetComponent<PlayerController>().dead;
 
         if (dead)
         {
@@ -42,6 +44,7 @@ public abstract class Enemy : MonoBehaviour
     {
         health -= damage;
         FlashColor(flashTime);
+
         bloodEffect.transform.localScale = new Vector3(Mathf.Sign(transform.localScale.x), 1, 1);
         Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * Mathf.Sign(transform.localScale.x), 0.8f, 0), Quaternion.identity);
     }

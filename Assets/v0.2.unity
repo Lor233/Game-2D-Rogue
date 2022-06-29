@@ -639,7 +639,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537067ecdb6443342a8b0aac74cb0750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  health: 10
+  dead: 0
+  colliderDamage: 4
+  flashTime: 0.2
+  bloodEffect: {fileID: 163906270346007927, guid: 74cc4775c2a29464ab5263c651455c70, type: 3}
+  speed: 3
   attackCd: 0.5
   attackCdCurrent: 0
 --- !u!50 &1041450111

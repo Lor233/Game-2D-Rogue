@@ -39,16 +39,16 @@ public class EnemeyCow : Enemy
 
         if (health > 0)
         {
-            if (Vector2.Distance(transform.position, playerPos.position) > attackDistance)
+            if (Vector2.Distance(transform.position, playerPos.position) <= attackDistance & !playerDead)
             {
-                if (runBool)
-                {
-                transform.position = Vector2.MoveTowards(transform.position, movePos.position, speed * Time.deltaTime);
-                }
+                attack();
             }
             else
             {
-                attack();
+                if (runBool)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, movePos.position, speed * Time.deltaTime);
+                }
             }
         }
 
