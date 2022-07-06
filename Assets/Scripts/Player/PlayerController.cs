@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     Color originalColor;
     HealthBarPlayer hpBar;
 
+    public bool canAct;
+
     [Header("Health")]
     public int health;
     public bool dead;
@@ -23,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move")]
     public float speed;
-    public bool canRun;
     
     [Header("Attack")]
     public float attackCd;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (attackCdCurrent <= 0)
+        if (attackCdCurrent <= 0 && canAct)
         {
             rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         }
@@ -70,12 +71,15 @@ public class PlayerController : MonoBehaviour
 
     void MoveGet()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        if (movement.x != 0)
+        if (canAct)
         {
-            transform.localScale = new Vector3((float) (movement.x * 1.5), (float) 1.5, 1);
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            if (movement.x != 0)
+            {
+                transform.localScale = new Vector3((float) (movement.x * 1.5), (float) 1.5, 1);
+            }
         }
     }
 
@@ -85,12 +89,14 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("attack");
             attackCdCurrent = attackCd;
+            movement.x = 0;
+            movement.y = 0;
         }
         else if (attackCdCurrent > 0)
         {
             attackCdCurrent -= Time.deltaTime;
         }
-        else if (attackCdCurrent <= 0 && canRun)
+        else if (attackCdCurrent <= 0 && canAct)
         {
             anim.SetFloat("speed", movement.magnitude);
         }
