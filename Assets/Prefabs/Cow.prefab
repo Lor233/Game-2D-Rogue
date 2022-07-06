@@ -342,17 +342,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
+  anim: {fileID: 2761983586937216910}
   playerDead: 0
   health: 20
   dead: 0
-  damage: 5
   flashTime: 0.2
   bloodEffect: {fileID: 163906270346007927, guid: 74cc4775c2a29464ab5263c651455c70, type: 3}
   damageCanvas: {fileID: 6286605582573475944, guid: 9da1074a3368f054ebe38795fb595c40, type: 3}
   speed: 2
   startWaitTime: 1
   waitTime: 1
-  runBool: 1
+  canAct: 1
   movePos: {fileID: 2761983586651583275}
   leftDownPos: {fileID: 2761983585909783340}
   RightUpPos: {fileID: 2761983586732145127}

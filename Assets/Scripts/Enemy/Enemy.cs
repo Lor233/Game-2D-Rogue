@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public Transform playerPos;
-    public bool playerDead;
     public Animator anim;
+    public bool playerDead;
 
     [Header("Health")]
     public float health;

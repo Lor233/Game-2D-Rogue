@@ -8,7 +8,7 @@ public class EnemeyCow : Enemy
     public float speed;
     public float startWaitTime;
     public float waitTime;
-    public bool canRun;
+    public bool canAct;
 
     public Transform movePos;
     public Transform leftDownPos;
@@ -35,52 +35,23 @@ public class EnemeyCow : Enemy
 
         if (health > 0)
         {
-            if (Vector2.Distance(transform.position, playerPos.position) <= attackDistance & !playerDead)
+            if (Vector2.Distance(transform.position, playerPos.position) <= attackDistance && !playerDead)
             {
-                attack();
+                Attack();
             }
             else
             {
-                if (canRun)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, movePos.position, speed * Time.deltaTime);
-                }
+                FreeRun();
+                anim.SetBool("run", canAct);
             }
         }
-
-        if (Vector2.Distance(transform.position, movePos.position) < 0.001f)
-        {
-            if (waitTime <= 0)
-            {
-                movePos.position = GetRandomPos();
-                waitTime = startWaitTime;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-            canRun = false;
-        }
-        else
-        {
-            transform.localScale = new Vector3((float) (Mathf.Sign(movePos.transform.position.x - transform.position.x) * 1.5), (float) 1.5, 1);
-            canRun = true;
-        }
-
-        anim.SetBool("run", canRun);
     }
 
-    Vector2 GetRandomPos()
+    void Attack()
     {
-        return new Vector2(Random.Range(leftDownPos.position.x, RightUpPos.position.x),
-            Random.Range(leftDownPos.position.y, RightUpPos.position.y));
-    }
-
-    void attack()
-    {
-        if (attackCdCurrent <= 0)
+        if (attackCdCurrent <= 0 && canAct)
         {
-            transform.localScale = new Vector3((float) (Mathf.Sign(playerPos.transform.position.x - transform.position.x) * 1.5), (float) 1.5, 1);
+            transform.localScale = new Vector3((float) (Mathf.Sign(playerPos.position.x - transform.position.x) * 1.5), (float) 1.5, 1);
             anim.SetTrigger("attack");
             attackCdCurrent = attackCd;
         }
@@ -88,6 +59,39 @@ public class EnemeyCow : Enemy
         {
             attackCdCurrent -= Time.deltaTime;
         }
+    }
+
+    void FreeRun()
+    {
+        if (canAct)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, movePos.position, speed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, movePos.position) < 0.001f)
+            {
+                if (waitTime <= 0)
+                {
+                    movePos.position = GetRandomPos();
+                    waitTime = startWaitTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
+                canAct = false;
+            }
+            else
+            {
+                transform.localScale = new Vector3((float) (Mathf.Sign(movePos.transform.position.x - transform.position.x) * 1.5), (float) 1.5, 1);
+                canAct = true;
+            }
+        }
+    }
+
+    Vector2 GetRandomPos()
+    {
+        return new Vector2(Random.Range(leftDownPos.position.x, RightUpPos.position.x),
+            Random.Range(leftDownPos.position.y, RightUpPos.position.y));
     }
 
 }
