@@ -2,20 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    public Transform playerPos;
-    public bool playerDead;
-
     [Header("Health")]
-    public int health;
+    public float health;
     public bool dead;
 
     [Header("Be Attack")]
-    public int damage;
     public float flashTime;
-    public GameObject bloodEffect;
-    
+
     Animator anim;
     SpriteRenderer sr;
     Color originalColor;
@@ -31,38 +26,35 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        playerPos = GameObject.Find("Player").transform;
-        playerDead = GameObject.Find("Player").GetComponent<PlayerController>().dead;
-
         if (dead)
         {
-            Destroy(gameObject);
+            sr.color = new Color32(145, 145, 145, 255);
+            // Destroy(gameObject);
         }
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        FlashColor(flashTime);
+        if (health > 0)
+        {
+            health -= damage;
 
-        bloodEffect.transform.localScale = new Vector3(Mathf.Sign(transform.localScale.x), 1, 1);
-        Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * Mathf.Sign(transform.localScale.x), 0.8f, 0), Quaternion.identity);
+            if (health > 0)
+            {
+                anim.SetTrigger("be_attack");
+            }
+            else
+            {
+                anim.SetTrigger("dead");
+            }
+            FlashColor(flashTime);
+        }
     }
 
     void FlashColor(float time)
     {
         // sr.color = Color.white;
         sr.color = Color.red;
-
-        if (health > 0)
-        {
-            anim.SetTrigger("be_attack");
-        }
-        else
-        {
-            anim.SetTrigger("dead");
-        }
-
         Invoke("ResetColor", time);
     }
 

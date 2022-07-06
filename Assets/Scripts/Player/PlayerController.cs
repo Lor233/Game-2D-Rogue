@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr;
     Vector2 movement;
     Color originalColor;
+    HealthBarPlayer hpBar;
 
     [Header("Health")]
     public int health;
@@ -18,9 +19,11 @@ public class PlayerController : MonoBehaviour
     public int colliderDamage;
     public float flashTime;
     public GameObject bloodEffect;
+    public GameObject damageCanvas;
 
     [Header("Move")]
     public float speed;
+    public bool canRun;
     
     [Header("Attack")]
     public float attackCd;
@@ -34,6 +37,11 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+
+        // hpBar = GetComponentInParent<HealthBarPlayer>();
+        hpBar = GameObject.Find("Canvas/HealthBarPlayer").GetComponent<HealthBarPlayer>();
+        hpBar.maxHp = health;
+        hpBar.hp = health;
     }
 
     // Update is called once per frame
@@ -78,27 +86,38 @@ public class PlayerController : MonoBehaviour
         {
             attackCdCurrent -= Time.deltaTime;
         }
-        else if (attackCdCurrent <= 0)
+        else if (attackCdCurrent <= 0 && canRun)
         {
             anim.SetFloat("speed", movement.magnitude);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            TakeDamage(colliderDamage);
-        }
-    }
+    // public void TakeDamage(int damage)
+    // {
+    //     health -= damage;
+    //     hpBar.hp = health;
+    //     FlashColor(flashTime);
+        
+    //     float localx = Mathf.Sign(transform.localScale.x);
+    //     bloodEffect.transform.localScale = new Vector3(localx, 1, 1);
+    //     Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * localx, 0.8f, 0), Quaternion.identity);
+
+    //     DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-0.6f * localx, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
+    //     damageNum.ShowUIdamage(damage);
+    // }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+        hpBar.hp = health;
         FlashColor(flashTime);
         
-        // bloodEffect.transform.localScale = new Vector3(Mathf.Sign(transform.localScale.x), 1, 1);
-        // Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * Mathf.Sign(transform.localScale.x), 0.8f, 0), Quaternion.identity);
+        float localx = Mathf.Sign(transform.localScale.x);
+        bloodEffect.transform.localScale = new Vector3(localx, 1, 1);
+        Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * localx, 0.8f, 0), Quaternion.identity);
+
+        DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-0.6f * localx, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
+        damageNum.ShowUIdamage(damage);
     }
 
     void FlashColor(float time)

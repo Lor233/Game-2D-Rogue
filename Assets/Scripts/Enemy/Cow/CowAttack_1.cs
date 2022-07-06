@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class CowAttack_1 : MonoBehaviour
 {
     public int damage;
-
-    Animator anim;
-    PolygonCollider2D coli2D;
 
     // Start is called before the first frame update
     void Start()
     {
-        // anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        // coli2D = GetComponent<PolygonCollider2D>();
+
     }
 
     // Update is called once per frame
@@ -24,9 +20,9 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<PlayerController>().TakeDamage(damage);
         }
     }
 }

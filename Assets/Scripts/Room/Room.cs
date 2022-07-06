@@ -5,12 +5,20 @@ using UnityEngine.UI;
 
 public class Room : MonoBehaviour
 {
-
+    [Header("Door")]
+    public GameObject doorManager;
     public GameObject doorLeft, doorRight, doorUp, doorDown;
     public bool roomLeft, roomRight, roomUp, roomDown;
+    public int doorNumber;
+
+    [Header("Position")]
     public Text text;
     public int stepToStart;
-    public int doorNumber;
+
+    [Header("Clear")]
+    public bool complete;
+
+    GameObject[] doors;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +27,26 @@ public class Room : MonoBehaviour
         doorRight.SetActive(roomRight);
         doorUp.SetActive(roomUp);
         doorDown.SetActive(roomDown);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (complete)
+        {
+            // foreach (Transform child in gameObject.transform)
+            // {
+            //     if (child.CompareTag("Door"))
+            //     {
+            //         child.gameObject.SetActive(false);
+            //     }
+            // }
+            doors = GameObject.FindGameObjectsWithTag("Door");
+            foreach (GameObject child in doors)
+            {
+                child.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +69,10 @@ public class Room : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             CameraController.instance.ChangeTarget(transform);
+
+            doorManager.SetActive(true);
+        }
     }
 }

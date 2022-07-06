@@ -8,7 +8,7 @@ public class EnemeyCow : Enemy
     public float speed;
     public float startWaitTime;
     public float waitTime;
-    public bool runBool;
+    public bool canRun;
 
     public Transform movePos;
     public Transform leftDownPos;
@@ -45,7 +45,7 @@ public class EnemeyCow : Enemy
             }
             else
             {
-                if (runBool)
+                if (canRun)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, movePos.position, speed * Time.deltaTime);
                 }
@@ -63,15 +63,15 @@ public class EnemeyCow : Enemy
             {
                 waitTime -= Time.deltaTime;
             }
-            runBool = false;
+            canRun = false;
         }
         else
         {
             transform.localScale = new Vector3((float) (Mathf.Sign(movePos.transform.position.x - transform.position.x) * 1.5), (float) 1.5, 1);
-            runBool = true;
+            canRun = true;
         }
 
-        anim.SetBool("run", runBool);
+        anim.SetBool("run", canRun);
     }
 
     Vector2 GetRandomPos()

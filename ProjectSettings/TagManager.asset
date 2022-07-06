@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Item
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -59,4 +61,7 @@ TagManager:
     locked: 0
   - name: Paticle
     uniqueID: 1721265629
+    locked: 0
+  - name: UI
+    uniqueID: 1493022931
     locked: 0
