@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour
 {
     public Transform playerPos;
     public bool playerDead;
+    public Animator anim;
 
     [Header("Health")]
     public float health;
@@ -17,7 +18,6 @@ public abstract class Enemy : MonoBehaviour
     public GameObject bloodEffect;
     public GameObject damageCanvas;
     
-    Animator anim;
     SpriteRenderer sr;
     Color originalColor;
 
@@ -46,19 +46,19 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float otherX)
     {
         if (health > 0)
         {
             health -= damage;
             GetComponentInChildren<HealthBar>().hp = health;
             FlashColor(flashTime);
-
-            float localx = Mathf.Sign(transform.localScale.x);
-            bloodEffect.transform.localScale = new Vector3(localx, 1, 1);
-            Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * localx, 0.8f, 0), Quaternion.identity);
-            
-            DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-1.2f * localx, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
+            // Blood effect
+            float directionX = Mathf.Sign(otherX - transform.position.x);
+            bloodEffect.transform.localScale = new Vector3(directionX, 1, 1);
+            Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * directionX, 0.8f, 0), Quaternion.identity);
+            // Damage number
+            DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-1.2f * directionX, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
             damageNum.ShowUIdamage(damage);
         }
     }

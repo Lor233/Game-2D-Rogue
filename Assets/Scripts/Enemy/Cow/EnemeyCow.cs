@@ -19,8 +19,6 @@ public class EnemeyCow : Enemy
     public float attackCd;
     public float attackCdCurrent;
 
-    Animator anim;
-
     // Start is called before the first frame update
     new void Start()
     {
@@ -28,8 +26,6 @@ public class EnemeyCow : Enemy
 
         waitTime = startWaitTime;
         movePos.position = GetRandomPos();
-
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

@@ -92,32 +92,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // public void TakeDamage(int damage)
-    // {
-    //     health -= damage;
-    //     hpBar.hp = health;
-    //     FlashColor(flashTime);
-        
-    //     float localx = Mathf.Sign(transform.localScale.x);
-    //     bloodEffect.transform.localScale = new Vector3(localx, 1, 1);
-    //     Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * localx, 0.8f, 0), Quaternion.identity);
-
-    //     DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-0.6f * localx, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
-    //     damageNum.ShowUIdamage(damage);
-    // }
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float otherX)
     {
-        health -= damage;
-        hpBar.hp = health;
-        FlashColor(flashTime);
-        
-        float localx = Mathf.Sign(transform.localScale.x);
-        bloodEffect.transform.localScale = new Vector3(localx, 1, 1);
-        Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * localx, 0.8f, 0), Quaternion.identity);
-
-        DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-0.6f * localx, 1.0f, 0), Quaternion.identity).GetComponent<DamageNum>();
-        damageNum.ShowUIdamage(damage);
+        if (health > 0)
+        {
+            health -= damage;
+            hpBar.hp = health;
+            FlashColor(flashTime);
+            // Blood effect
+            float directionX = Mathf.Sign(otherX - transform.position.x);
+            bloodEffect.transform.localScale = new Vector3(directionX, 1, 1);
+            Instantiate(bloodEffect, transform.position + new Vector3(-0.6f * directionX, 0.8f, 0), Quaternion.identity);
+            // Damage number
+            DamageNum damageNum = Instantiate(damageCanvas, transform.position + new Vector3(-0.5f * directionX, 0.7f, 0), Quaternion.identity).GetComponent<DamageNum>();
+            damageNum.ShowUIdamage(damage);
+        }
     }
 
     void FlashColor(float time)

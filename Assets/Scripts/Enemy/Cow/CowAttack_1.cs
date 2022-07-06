@@ -22,7 +22,7 @@ public class CowAttack_1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>().TakeDamage(damage);
+            other.GetComponent<PlayerController>().TakeDamage(damage, transform.parent.position.x);
         }
     }
 }
