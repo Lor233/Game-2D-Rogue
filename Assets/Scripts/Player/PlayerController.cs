@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead)
+        if (health <= 0)
         {
             movement.x = 0;
             movement.y = 0;
@@ -55,15 +55,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-
-            if (movement.x != 0)
-            {
-                transform.localScale = new Vector3((float) (movement.x * 1.5), (float) 1.5, 1);
-            }
-
-            SwitchAnim();
+            MoveGet();
+            Attack();
         }
     }
 
@@ -75,7 +68,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SwitchAnim()
+    void MoveGet()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.x != 0)
+        {
+            transform.localScale = new Vector3((float) (movement.x * 1.5), (float) 1.5, 1);
+        }
+    }
+
+    void Attack()
     {
         if (Input.GetKey("space") & attackCdCurrent <= 0)
         {
