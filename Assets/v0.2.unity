@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 589546509, guid: 47d9539a38b73e0408aafa76f3de91b8, type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1041450108}
     - target: {fileID: 434187883015960336, guid: 47d9539a38b73e0408aafa76f3de91b8, type: 3}
       propertyPath: m_Name
       value: TestRoom
@@ -181,10 +185,6 @@ PrefabInstance:
     - target: {fileID: 4415362168271099292, guid: 47d9539a38b73e0408aafa76f3de91b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6833712189291711350, guid: 47d9539a38b73e0408aafa76f3de91b8, type: 3}
-      propertyPath: m_TagString
-      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d9539a38b73e0408aafa76f3de91b8, type: 3}
@@ -965,7 +965,7 @@ Animator:
   m_GameObject: {fileID: 1041450105}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 856ed7b89471e9b4bb4549172e4d2d82, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa1db5437305bb54f80c87462c76b008, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1033,7 +1033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041450105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.38, y: 0.14, z: 0}
+  m_LocalPosition: {x: 1.3, y: 0.28, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1228857763}
@@ -1078,6 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537067ecdb6443342a8b0aac74cb0750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAct: 1
   health: 10
   dead: 0
   colliderDamage: 4
@@ -1085,7 +1086,6 @@ MonoBehaviour:
   bloodEffect: {fileID: 163906270346007927, guid: 74cc4775c2a29464ab5263c651455c70, type: 3}
   damageCanvas: {fileID: 6286605582573475944, guid: 9da1074a3368f054ebe38795fb595c40, type: 3}
   speed: 3
-  canRun: 1
   attackCd: 0.5
   attackCdCurrent: 0
 --- !u!50 &1041450111

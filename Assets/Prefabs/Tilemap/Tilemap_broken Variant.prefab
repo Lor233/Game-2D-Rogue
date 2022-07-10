@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810240005558543117, guid: cb87a1dbf402465438ed1319a8a3fed3, type: 3}
       propertyPath: m_Name
-      value: Tilemap_broken
+      value: Tilemap_broken Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2810240005558543118, guid: cb87a1dbf402465438ed1319a8a3fed3, type: 3}
       propertyPath: m_TileAssetArray.Array.size
