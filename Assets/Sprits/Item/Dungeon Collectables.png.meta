@@ -318,7 +318,7 @@ TextureImporter:
       213: 422606482980328374
     second: Dungeon Collectables_104
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -339,6 +339,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -377,6 +378,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -416,6 +418,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2644,6 +2658,112 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Dungeon Collectables_104: 422606482980328374
+      Dungeon Collectables_3: 8376373798699548044
+      Dungeon Collectables_49: 1588848132050266980
+      Dungeon Collectables_59: -4172109317174925783
+      Dungeon Collectables_25: 7139187838515069791
+      Dungeon Collectables_6: -3715489973487708034
+      Dungeon Collectables_97: 1353957706228603669
+      Dungeon Collectables_29: -7044564965042940968
+      Dungeon Collectables_73: -9184375279789223778
+      Dungeon Collectables_9: -7075445026061771052
+      Dungeon Collectables_91: -8629404192443205113
+      Dungeon Collectables_101: 4501600687642850218
+      Dungeon Collectables_85: 6739248836011976740
+      Dungeon Collectables_22: 2698192754117038406
+      Dungeon Collectables_81: 2990512398700930684
+      Dungeon Collectables_21: 3045172811279320518
+      Dungeon Collectables_2: -7926764574928860638
+      Dungeon Collectables_42: -4443509392822675782
+      Dungeon Collectables_70: -1445884640494133820
+      Dungeon Collectables_15: -2899221626762912873
+      Dungeon Collectables_44: 7966821305654872209
+      Dungeon Collectables_8: -3796129081628504124
+      Dungeon Collectables_34: 6288459789718912356
+      Dungeon Collectables_57: 3995863874401759228
+      Dungeon Collectables_38: -739816467086169766
+      Dungeon Collectables_27: 5432353997622487570
+      Dungeon Collectables_17: -6681965107842798902
+      Dungeon Collectables_95: -6353224969517733235
+      Dungeon Collectables_75: -8343900820229595205
+      Dungeon Collectables_60: -6277042810995023871
+      Dungeon Collectables_51: -1035559217244117572
+      Dungeon Collectables_80: -6633201637061069470
+      Dungeon Collectables_0: -4981027512063062209
+      Dungeon Collectables_96: 5291515845501891750
+      Dungeon Collectables_69: -7557153018466184766
+      Dungeon Collectables_23: 510378136601011835
+      Dungeon Collectables_11: -9039626606516614119
+      Dungeon Collectables_35: -8897916520915732096
+      Dungeon Collectables_1: 8491543709793888540
+      Dungeon Collectables_62: 6189203634271931348
+      Dungeon Collectables_86: 6601766068770275637
+      Dungeon Collectables_13: -7094880711516134970
+      Dungeon Collectables_82: 5592133943441781655
+      Dungeon Collectables_24: 5130627243197491662
+      Dungeon Collectables_31: 3415182904475538826
+      Dungeon Collectables_45: -8058128219490997177
+      Dungeon Collectables_41: 5500159539016708025
+      Dungeon Collectables_4: -1993628870884830186
+      Dungeon Collectables_83: 2291735748589580493
+      Dungeon Collectables_10: 4604653957286751398
+      Dungeon Collectables_92: -5153863467594679520
+      Dungeon Collectables_43: -1642212851157522695
+      Dungeon Collectables_50: 17682809781171341
+      Dungeon Collectables_94: -8292618056502113727
+      Dungeon Collectables_52: 1032874224828317971
+      Dungeon Collectables_78: -4763430882880004664
+      Dungeon Collectables_89: -657950585130581956
+      Dungeon Collectables_37: 2119473919272843211
+      Dungeon Collectables_93: -6877182683535460945
+      Dungeon Collectables_87: -1711976886991855243
+      Dungeon Collectables_12: 6682896973852923195
+      Dungeon Collectables_54: 4075156790377629036
+      Dungeon Collectables_16: 5276200900968943004
+      Dungeon Collectables_72: 1734155852201070867
+      Dungeon Collectables_47: -5060553453526144757
+      Dungeon Collectables_33: 6732726125909585893
+      Dungeon Collectables_66: -3426096621076245286
+      Dungeon Collectables_56: 2708593062330259706
+      Dungeon Collectables_58: -7802832281504000969
+      Dungeon Collectables_36: -1484005838747827312
+      Dungeon Collectables_84: 8028966428354715050
+      Dungeon Collectables_76: -991507497963055286
+      Dungeon Collectables_18: 6506629424491578777
+      Dungeon Collectables_65: -4386946315038416306
+      Dungeon Collectables_40: 8859461837538376766
+      Dungeon Collectables_71: -8461107194484759631
+      Dungeon Collectables_79: 3602402131439976276
+      Dungeon Collectables_90: 8807969989673504854
+      Dungeon Collectables_103: -7941780829770473178
+      Dungeon Collectables_19: 6829010362773081039
+      Dungeon Collectables_63: -1855442797508675585
+      Dungeon Collectables_20: 8585337745559550001
+      Dungeon Collectables_26: -4095409828478574506
+      Dungeon Collectables_61: 2249171316757544893
+      Dungeon Collectables_64: -8155234835322214782
+      Dungeon Collectables_100: 1923781133373865985
+      Dungeon Collectables_74: 6487370547699295052
+      Dungeon Collectables_55: -4437859670124924521
+      Dungeon Collectables_102: -7328939129734232921
+      Dungeon Collectables_5: -5718687790894517427
+      Dungeon Collectables_30: 4728079521747387509
+      Dungeon Collectables_48: -8234185889769579856
+      Dungeon Collectables_32: -6352183285247097963
+      Dungeon Collectables_67: 1486802397360518084
+      Dungeon Collectables_99: 2121353441889084020
+      Dungeon Collectables_7: 3981406535509432002
+      Dungeon Collectables_88: 2654476244915643601
+      Dungeon Collectables_98: 2893986201217686178
+      Dungeon Collectables_28: -1562064083800305476
+      Dungeon Collectables_39: 3618095115115201316
+      Dungeon Collectables_77: -4986168160647568055
+      Dungeon Collectables_46: 4232332110829087699
+      Dungeon Collectables_14: 3731069644163115339
+      Dungeon Collectables_68: 2717317207705513306
+      Dungeon Collectables_53: 8613126039453912486
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -12,7 +12,7 @@ public class RoomGenerator : MonoBehaviour
     public GameObject roomPrefab;
     public int roomNumber;
     public Color startColor, endColor;
-    private GameObject endRoom;
+    public GameObject endRoom;
 
     [Header("位置控制")]
     public Transform generatorPoint;
@@ -40,8 +40,6 @@ public class RoomGenerator : MonoBehaviour
             ChangePointPos();
         }
 
-        rooms[0].GetComponent<SpriteRenderer>().color = startColor;
-
         endRoom = rooms[0].gameObject;
         foreach (var room in rooms)
         {
@@ -51,6 +49,9 @@ public class RoomGenerator : MonoBehaviour
         FindEndRoom();
 
         endRoom.GetComponent<SpriteRenderer>().color = endColor;
+        endRoom.GetComponent<Room>().end = true;
+
+        rooms[0].GetComponent<SpriteRenderer>().color = startColor;
     }
 
     // Update is called once per frame

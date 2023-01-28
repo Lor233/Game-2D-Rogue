@@ -15,10 +15,15 @@ public class Room : MonoBehaviour
     public Text text;
     public int stepToStart;
 
-    [Header("Clear")]
+    [Header("Enemy")]
+    public GameObject enemyManager;
     public bool complete;
+    public bool end;
 
-    GameObject[] doors;
+    [Header("UI")]
+    public WinMenu winMenu;
+
+    // GameObject[] doors;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,14 @@ public class Room : MonoBehaviour
         doorRight.SetActive(roomRight);
         doorUp.SetActive(roomUp);
         doorDown.SetActive(roomDown);
+
+        if (stepToStart != 0)
+        {
+            doorManager.SetActive(false);
+            enemyManager.SetActive(false);
+        }
+
+        winMenu = GameObject.Find("Canvas").GetComponent<WinMenu>();
     }
 
     // Update is called once per frame
@@ -34,17 +47,10 @@ public class Room : MonoBehaviour
     {
         if (complete)
         {
-            // foreach (Transform child in gameObject.transform)
-            // {
-            //     if (child.CompareTag("Door"))
-            //     {
-            //         child.gameObject.SetActive(false);
-            //     }
-            // }
-            doors = GameObject.FindGameObjectsWithTag("Door");
-            foreach (GameObject child in doors)
+            doorManager.SetActive(false);
+            if (end == true)
             {
-                child.SetActive(false);
+                winMenu.Pause();
             }
         }
     }
@@ -71,8 +77,8 @@ public class Room : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CameraController.instance.ChangeTarget(transform);
-
             doorManager.SetActive(true);
+            enemyManager.SetActive(true);
         }
     }
 }

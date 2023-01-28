@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Item
   - Door
+  - CollectItem
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -18,9 +20,9 @@ TagManager:
   - Player
   - Enemy
   - Particle
-  - 
-  - 
-  - 
+  - CollectItem
+  - Walk
+  - Wall
   - 
   - 
   - 
@@ -61,6 +63,9 @@ TagManager:
     locked: 0
   - name: Paticle
     uniqueID: 1721265629
+    locked: 0
+  - name: Weapon
+    uniqueID: 2274366357
     locked: 0
   - name: UI
     uniqueID: 1493022931

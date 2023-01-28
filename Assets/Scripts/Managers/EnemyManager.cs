@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public bool playerPos;
     public int enemys;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerPos = false;
         enemys = gameObject.transform.childCount;
     }
 

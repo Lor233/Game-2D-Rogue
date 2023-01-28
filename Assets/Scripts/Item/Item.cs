@@ -10,6 +10,7 @@ public abstract class Item : MonoBehaviour
 
     [Header("Be Attack")]
     public float flashTime;
+    public bool isAttack;
 
     Animator anim;
     SpriteRenderer sr;
@@ -35,31 +36,58 @@ public abstract class Item : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (health > 0)
+        if (health > 0 && !isAttack)
         {
             health -= damage;
+            // Hit audio
+            SoundManager.instance.PlayHitWood();
 
             if (health > 0)
             {
+                
                 anim.SetTrigger("be_attack");
             }
             else
             {
+                SoundManager.instance.PlayBrokenWood();
                 anim.SetTrigger("dead");
             }
             FlashColor(flashTime);
+            StartCoroutine(InvincibleCo());
         }
     }
 
     void FlashColor(float time)
     {
-        // sr.color = Color.white;
-        sr.color = Color.red;
-        Invoke("ResetColor", time);
+        sr.material.SetFloat("_FlashAmount", 0.7f);
+
+        if (health > 0)
+        {
+            anim.SetTrigger("be_attack");
+            Invoke("ResetColor", time);
+        }
+        else
+        {
+            anim.SetTrigger("dead");
+            Invoke("DeadColor", time);
+        }
     }
 
     void ResetColor()
     {
-        sr.color = originalColor;
+        sr.material.SetFloat("_FlashAmount", 0);
+    }
+
+    void DeadColor()
+    {
+        sr.material.SetFloat("_FlashAmount", 0);
+        sr.color = new Color32(145, 145, 145, 255);
+    }
+
+    IEnumerator InvincibleCo()
+    {
+        isAttack = true;
+        yield return new WaitForSeconds(0.3f);
+        isAttack = false;
     }
 }

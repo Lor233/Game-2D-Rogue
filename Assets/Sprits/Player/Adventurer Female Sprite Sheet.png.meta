@@ -126,7 +126,7 @@ TextureImporter:
       213: 2693751403432088350
     second: Adventurer Female Sprite Sheet_40
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -147,6 +147,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -185,6 +186,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -224,6 +226,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1108,6 +1122,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Adventurer Female Sprite Sheet_35: 7147890255029268589
+      Adventurer Female Sprite Sheet_16: 1187294556592463341
+      Adventurer Female Sprite Sheet_24: -2927161851363396854
+      Adventurer Female Sprite Sheet_4: 3662680490533180769
+      Adventurer Female Sprite Sheet_9: 8104460964076836889
+      Adventurer Female Sprite Sheet_17: -2482379645055944973
+      Adventurer Female Sprite Sheet_38: 2778032627295402909
+      Adventurer Female Sprite Sheet_40: 2693751403432088350
+      Adventurer Female Sprite Sheet_31: 1112904660496486075
+      Adventurer Female Sprite Sheet_37: -3829765999028038619
+      Adventurer Female Sprite Sheet_39: -4226212269267474665
+      Adventurer Female Sprite Sheet_11: -561519679613458101
+      Adventurer Female Sprite Sheet_26: 5726214664535781439
+      Adventurer Female Sprite Sheet_2: -3362215572200808990
+      Adventurer Female Sprite Sheet_27: -6833262853496069922
+      Adventurer Female Sprite Sheet_5: 4620608302205990325
+      Adventurer Female Sprite Sheet_36: -7350996858177521694
+      Adventurer Female Sprite Sheet_33: 8632853111620347770
+      Adventurer Female Sprite Sheet_6: -8187454204970945972
+      Adventurer Female Sprite Sheet_22: -5337560667758865784
+      Adventurer Female Sprite Sheet_1: 1927154432546424787
+      Adventurer Female Sprite Sheet_20: 642458823119470675
+      Adventurer Female Sprite Sheet_30: 489557071490105177
+      Adventurer Female Sprite Sheet_7: -2464464415109538524
+      Adventurer Female Sprite Sheet_3: 7979074200822808942
+      Adventurer Female Sprite Sheet_21: 2712194743655051407
+      Adventurer Female Sprite Sheet_13: 1484541506824012365
+      Adventurer Female Sprite Sheet_29: 1569879187802173327
+      Adventurer Female Sprite Sheet_14: -1840752998641234693
+      Adventurer Female Sprite Sheet_18: -7727607939976299240
+      Adventurer Female Sprite Sheet_23: -7741771495787175378
+      Adventurer Female Sprite Sheet_28: 8396592794972293529
+      Adventurer Female Sprite Sheet_32: 7260229939732723003
+      Adventurer Female Sprite Sheet_10: -39052010764808234
+      Adventurer Female Sprite Sheet_25: 1401840931244149564
+      Adventurer Female Sprite Sheet_34: 4071636238654133930
+      Adventurer Female Sprite Sheet_15: -3908634467906884950
+      Adventurer Female Sprite Sheet_19: -6299965203621965811
+      Adventurer Female Sprite Sheet_8: 882556300075621838
+      Adventurer Female Sprite Sheet_12: -7990961109601412096
+      Adventurer Female Sprite Sheet_0: -1440518041077064095
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

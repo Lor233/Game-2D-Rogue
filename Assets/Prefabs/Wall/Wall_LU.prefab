@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6559773417412951148}
   - component: {fileID: 3494495744561231730}
   - component: {fileID: 8053253631500842890}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.9362, y: 5.05, z: 0}
   m_LocalScale: {x: 7.152625, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 0
@@ -43,6 +44,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -96,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -108,7 +111,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19628
+  m_InstanceId: 56612
 --- !u!1 &2196714652127718465
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2171182897076752097}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +138,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6559773417412951148}
   - {fileID: 3896935129226909621}
@@ -161,9 +165,9 @@ GameObject:
   - component: {fileID: 7337035478415205832}
   - component: {fileID: 6437900878034689276}
   - component: {fileID: 4637966095203118705}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +182,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5004199194478222786}
   m_RootOrder: 0
@@ -1707,6 +1712,7 @@ TilemapRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -2019,7 +2025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5004199194478222786}
   - component: {fileID: 6289261325156202314}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,6 +2042,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9195449057585334124}
   m_Father: {fileID: 2391082205899782372}
@@ -2062,9 +2069,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2391082205899782372}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wall_LU
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2079,6 +2086,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 156422334365687601}
   - {fileID: 5004199194478222786}
@@ -2097,7 +2105,7 @@ GameObject:
   - component: {fileID: 1216077449989257685}
   - component: {fileID: 80310163517541011}
   - component: {fileID: 170205231806994190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,6 +2122,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.43, y: 3.646, z: 0}
   m_LocalScale: {x: 0.15, y: 2.6890328, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 4
@@ -2129,6 +2138,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2182,6 +2192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2194,7 +2205,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19604
+  m_InstanceId: 56526
 --- !u!1 &4614089799116169581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2217,7 @@ GameObject:
   - component: {fileID: 3896935129226909621}
   - component: {fileID: 7967573110642724081}
   - component: {fileID: 2799446696361027745}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockX (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,6 +2234,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.9591, y: 5.056, z: 0}
   m_LocalScale: {x: 7.1563845, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 1
@@ -2238,6 +2250,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2291,6 +2304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2303,7 +2317,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19622
+  m_InstanceId: 56552
 --- !u!1 &4884443885859124595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156422334365687601}
   - component: {fileID: 4733738484119398138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Map_Rooms_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2331,6 +2345,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2391082205899782372}
   m_RootOrder: 0
@@ -2346,6 +2361,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2397,7 +2413,7 @@ GameObject:
   - component: {fileID: 4080188003986272741}
   - component: {fileID: 1131083448228719367}
   - component: {fileID: 274459828289580039}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockY (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,6 +2430,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.46, y: 3.646, z: 0}
   m_LocalScale: {x: 0.15, y: 2.6890328, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 5
@@ -2429,6 +2446,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2482,6 +2500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2494,7 +2513,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19598
+  m_InstanceId: 56528
 --- !u!1 &5393422948039734262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2525,7 @@ GameObject:
   - component: {fileID: 1613638369966276993}
   - component: {fileID: 5607777756334033127}
   - component: {fileID: 5271486405171744665}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockX (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2523,6 +2542,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.9591, y: -3.98, z: 0}
   m_LocalScale: {x: 7.1563845, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 2
@@ -2538,6 +2558,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2591,6 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2603,7 +2625,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19616
+  m_InstanceId: 56588
 --- !u!1 &7041658906579481623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2637,7 @@ GameObject:
   - component: {fileID: 1523515004814538025}
   - component: {fileID: 691219974212828110}
   - component: {fileID: 3562326457672687091}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockX (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2632,6 +2654,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.93, y: -3.98, z: 0}
   m_LocalScale: {x: 7.1563845, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 3
@@ -2647,6 +2670,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2700,6 +2724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2712,7 +2737,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19610
+  m_InstanceId: 56564
 --- !u!1 &7362559074899441833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2749,7 @@ GameObject:
   - component: {fileID: 2458931650412691870}
   - component: {fileID: 6048374486090395307}
   - component: {fileID: 8808124471777942754}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockY (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2741,6 +2766,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.46, y: -2.457, z: 0}
   m_LocalScale: {x: 0.15, y: 2.9229786, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 6
@@ -2756,6 +2782,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2809,6 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2821,7 +2849,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19592
+  m_InstanceId: 56616
 --- !u!1 &8627006404399374775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,7 +2861,7 @@ GameObject:
   - component: {fileID: 7956059493029773335}
   - component: {fileID: 588365815588155452}
   - component: {fileID: 3357994764029311246}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShadowBlockY (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,6 +2878,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.437, y: -2.457, z: 0}
   m_LocalScale: {x: 0.15, y: 2.9229786, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171182897076752097}
   m_RootOrder: 7
@@ -2865,6 +2894,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2918,6 +2948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
+  m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -2930,4 +2961,4 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -19586
+  m_InstanceId: 56560

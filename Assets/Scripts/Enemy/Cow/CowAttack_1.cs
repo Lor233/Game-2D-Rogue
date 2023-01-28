@@ -6,23 +6,18 @@ public class CowAttack_1 : MonoBehaviour
 {
     public int damage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().TakeDamage(damage, transform.parent.position.x);
+            // Knockback effect
+            other.GetComponent<PlayerController>().Knockback(transform.parent.position, 0.1f);
+        }
+        else if (other.gameObject.CompareTag("Item"))
+        {
+            other.GetComponent<Item>().TakeDamage(1);
+            Destroy(gameObject);
         }
     }
 }
