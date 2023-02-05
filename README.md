@@ -1,3 +1,3 @@
-# Game_Rougue
+# Just Rogue
 
 Run it with Unity.
